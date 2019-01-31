@@ -1,0 +1,33 @@
+<div [ngClass]="{'list-group-item': true,
+                'list-group-item-success': love > 0,
+                'list-group-item-danger': love < 0}">
+
+<!--création d'une table html pour la mise en forme-->                
+<table>
+	<tr>
+	<td width=820px> <!--on règle la mise en forme avec la longueur des cellules (width) --> 
+		<h3>
+	{{ PostTitle }} <!--On affiche le titre du post--> 
+	</h3>
+</td>
+<td>
+	{{ Created_at | date: 'MM/d/y, hh:mm a' | uppercase }} <!--On affiche la date--> 
+</td>
+</tr>
+		</table>
+		<p> {{ content}} </p> <!--On affiche le contenu du post--> 
+		<table>
+			<tr>
+				<td width=120px>
+				<!-- On crée les trois boutons -->	
+		<button class="btn btn-success" (click)="Like()">Love it !</button>
+	</td>
+	<td width=780px>
+		<button class="btn btn-danger" (click)="DisLike()">Don't love it !</button>
+	</td>
+	<td >
+		<button class="btn btn-danger" (click)="Delete()">Supprimer Post !</button>
+	</td>
+</tr>
+</table>
+</div>
